@@ -1,0 +1,160 @@
+/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+/* login.css */
+:root {
+  --color-text: #121212;
+  --color-accent: #03cf5d;
+  --color-accent-light: #9ef0fd;
+  --color-border: #dadada;
+  --color-error: #24388d;
+  --font-size-base: 1rem;
+  --spacing-side: 1.25rem;
+  --form-width-desktop: 31.25rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+main {
+    margin-top: 70px;
+    margin-inline: auto;
+    padding-inline: .875rem;
+
+    @media (min-width: 576px) {
+        margin-top: 100px;
+        width: 470px;
+    }
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+.login-title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+form {
+  max-width: var(--form-width-desktop);
+  margin: 0 auto;
+  padding: 0 var(--spacing-side);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="email"],
+input[type="password"] {
+  font-size: 0.875rem; /* 14px */
+  padding: 1.125rem; /* 45px height */
+  border: 1px solid var(--color-border);
+  background-color: #fff;
+  color: var(--color-text);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #24388d;
+  background-color: #f0f4ff; /* 포커스 시 연한 배경색 추가 */
+}
+
+.error-message {
+  display: none;
+  font-size: 0.875rem;
+  color: red;
+  margin-top: 0.25rem;
+}
+
+input:invalid:focus + .error-message,
+input:invalid:visited + .error-message,
+input:invalid:out-of-range + .error-message {
+  display: block;
+}
+
+.login-button {
+  font-size: 1rem;
+  height: 2.8125rem;
+  color: #fff;
+  background-color: var(--color-accent);
+  border: none;
+  padding: 0 var(--spacing-side);
+  cursor: pointer;
+}
+
+.login-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: var(--spacing-side);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox svg:nth-of-type(1) {
+  display: none;
+}
+.checkbox input:checked ~ svg:nth-of-type(1) {
+  display: inline;
+}
+.checkbox input:checked ~ svg:nth-of-type(2) {
+  display: none;
+}
+
+
+.ip-container {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-end;     
+  gap: 0.5rem;                   
+  padding-right: var(--spacing-side);
+  margin-top: 0.5rem;
+  height: 2.8125rem;             
+}
+
+.ip-link {
+  font-size: 1rem;
+  color: var(--color-text);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.ip-status-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  user-select: none;
+}
+
+.status-text::after {
+  content: "OFF";
+  color: #999;
+  margin-left: 0.25rem;
+}
+
+#ip-toggle:checked + .ip-status-toggle .status-text::after {
+  content: "ON";
+  color: var(--color-accent);
+}
