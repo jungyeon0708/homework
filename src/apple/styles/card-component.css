@@ -1,0 +1,93 @@
+@import "./reset.css";
+@import "./theme.css";
+@import "./base.css";
+
+/* card-component.css */
+
+.product-card {
+  width: 100%;
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.product-card.dark-bg {
+  color: var(--white);
+}
+
+.product-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--large-spacing);
+}
+
+.product-card-title {
+  font-size: var(--large-text);
+  font-weight: bold;
+  margin-bottom: var(--small-spacing);
+}
+
+.product-card-desc {
+  font-size: var(--base-text);
+  line-height: var(--line-normal);
+  margin-top: var(--x-small-spacing);
+}
+
+.product-card-subdesc {
+  font-size: var(--small-text);
+  color: var(--gray);
+  margin-top: var(--x-small-spacing);
+}
+
+.product-card-buttons {
+  display: flex;
+  gap: var(--base-spacing);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--x-small-spacing);
+}
+
+.product-card-button {
+  padding: var(--x-small-spacing) var(--small-spacing);
+  font-size: var(--x-small-text);
+  font-weight: 500;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.product-card-button-filled {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.product-card.dark-bg .product-card-button-filled {
+  background-color: var(--blue-300);
+}
+
+.product-card-button-outline {
+  background-color: transparent;
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+
+.product-card.dark-bg .product-card-button-outline {
+  border-color: var(--blue-300);
+  color: var(--blue-300);
+}
+
+@media (min-width: 1024px) {
+
+  .double-column {
+    grid-template-columns: repeat(2, 1fr);
+    float: left;
+    width: 50%;
+  }
+}
